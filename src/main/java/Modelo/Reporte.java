@@ -16,3 +16,18 @@ public class Reporte {
     public String getTituloProfesores() { return tituloProfesores; }
     public void setTituloProfesores(String titulo) { this.tituloProfesores = titulo; }
 
+    // POLIMORFISMO: recibe una Persona y ejecuta el descripcion() de la subclase real
+    private String linea(Persona p) {
+        return p.descripcion() + "\n";
+    }
+
+    // REPORTE 1: lista de estudiantes (dependencia: usa Colegio como parámetro)
+    public String reporteEstudiantes(Colegio colegio) {
+        String texto = tituloEstudiantes + "\n";
+        for (int i = 0; i < colegio.getEstudiantes().size(); i++) {
+            texto = texto + linea(colegio.getEstudiantes().get(i));
+        }
+        return texto;
+    }
+
+    
