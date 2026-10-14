@@ -30,4 +30,8 @@ public class Reporte {
         return texto;
     }
 
-    
+// REPORTE 2: profesores ordenados por pago total (mayor a menor) + total prestaciones
+    public String reporteProfesores(Colegio colegio) {
+        // copia de la lista para no alterar el orden original
+        ArrayList<Profesor> lista = new ArrayList<Profesor>(colegio.getProfesores());
+
